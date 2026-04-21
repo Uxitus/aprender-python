@@ -1,4 +1,3 @@
-
 #Calculadora de hrs de estudio
 
 dias= 21
