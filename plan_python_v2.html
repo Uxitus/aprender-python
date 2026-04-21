@@ -1,0 +1,154 @@
+
+<style>
+  .wcard { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 1rem; }
+  .whead { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .badge { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; }
+  .day-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-bottom: 10px; }
+  .dc { border-radius: 8px; padding: 7px 4px; text-align: center; font-size: 10px; cursor: pointer; border: 0.5px solid transparent; transition: all 0.15s; line-height: 1.3; }
+  .dc:hover { filter: brightness(0.92); }
+  .dc.sel { border-color: var(--color-border-primary) !important; box-shadow: 0 0 0 1.5px var(--color-border-secondary); }
+  .dc .dn { font-weight: 500; font-size: 9px; margin-bottom: 2px; }
+  .detail { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 14px; font-size: 13px; color: var(--color-text-secondary); min-height: 52px; display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .pill { font-size: 11px; padding: 3px 9px; border-radius: 20px; border: 0.5px solid var(--color-border-secondary); color: var(--color-text-secondary); }
+  .change-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+  .change { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 8px 10px; font-size: 12px; }
+  .change strong { display: block; font-size: 11px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 2px; }
+  h2.wt { font-size: 15px; font-weight: 500; margin: 0.5rem 0 2px; color: var(--color-text-primary); }
+  .sub { font-size: 12px; color: var(--color-text-secondary); margin: 0 0 12px; }
+  .legend { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+  .leg { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--color-text-secondary); }
+  .leg-dot { width: 10px; height: 10px; border-radius: 3px; }
+</style>
+
+<h2 class="sr-only">Plan de aprendizaje Python v2 — actualizado con mejoras</h2>
+<h2 class="wt">Plan actualizado — versión 2</h2>
+<p class="sub">Haz clic en cada día para ver el detalle completo</p>
+
+<div class="legend">
+  <div class="leg"><div class="leg-dot" style="background:#378ADD"></div>Aprendizaje</div>
+  <div class="leg"><div class="leg-dot" style="background:#639922"></div>Miniproyecto / repaso</div>
+  <div class="leg"><div class="leg-dot" style="background:#BA7517"></div>Proyecto final</div>
+  <div class="leg"><div class="leg-dot" style="background:#888780"></div>Fin de semana (trabajo)</div>
+</div>
+
+<div id="detail" class="detail"><span style="font-size:14px">👆</span><span>Selecciona un día para ver el detalle</span></div>
+
+<div class="wcard">
+  <div class="whead">
+    <span class="badge" style="background:#E6F1FB;color:#0C447C">Semana 1</span>
+    <span style="font-size:14px;font-weight:500">Python + GitHub desde el día 1</span>
+  </div>
+  <div class="day-grid" id="w1"></div>
+  <div class="pills">
+    <span class="pill">Variables y tipos</span>
+    <span class="pill">Loops y condicionales</span>
+    <span class="pill">Funciones</span>
+    <span class="pill">GitHub setup</span>
+    <span class="pill">Debugging básico</span>
+    <span class="pill">Ejercicios sin guía diarios</span>
+  </div>
+</div>
+
+<div class="wcard">
+  <div class="whead">
+    <span class="badge" style="background:#E1F5EE;color:#0F6E56">Semana 2</span>
+    <span style="font-size:14px;font-weight:500">Librerías + primeras imágenes</span>
+  </div>
+  <div class="day-grid" id="w2"></div>
+  <div class="pills">
+    <span class="pill">NumPy</span>
+    <span class="pill">OpenCV imágenes</span>
+    <span class="pill">OpenCV video</span>
+    <span class="pill">Detección de movimiento</span>
+    <span class="pill">GitHub commits diarios</span>
+  </div>
+</div>
+
+<div class="wcard">
+  <div class="whead">
+    <span class="badge" style="background:#FAEEDA;color:#854F0B">Semana 3</span>
+    <span style="font-size:14px;font-weight:500">Proyecto por niveles → conteo de personas</span>
+  </div>
+  <div class="day-grid" id="w3"></div>
+  <div class="pills">
+    <span class="pill">Nivel 1: detectar movimiento</span>
+    <span class="pill">Nivel 2: detectar objetos</span>
+    <span class="pill">Nivel 3: detectar personas</span>
+    <span class="pill">Nivel 4: contar personas</span>
+    <span class="pill">Demo + GitHub pulido</span>
+  </div>
+</div>
+
+<div class="wcard" style="border-color:var(--color-border-secondary)">
+  <p style="font-size:13px;font-weight:500;margin:0 0 8px;color:var(--color-text-primary)">Cambios respecto al plan anterior</p>
+  <div class="change-row">
+    <div class="change"><strong>+ GitHub desde Día 2</strong>Sube código cada día — al final tienes 21 días de historial</div>
+    <div class="change"><strong>+ Debugging diario</strong>Leer errores en rojo es parte de cada sesión, no un tema aparte</div>
+    <div class="change"><strong>+ Ejercicio sin guía</strong>Cada día termina con un problema a resolver solo (10–30 min)</div>
+    <div class="change"><strong>+ Proyecto en 4 niveles</strong>Movimiento → objetos → personas → conteo. Cada nivel es entregable</div>
+    <div class="change"><strong>+ Regla de atraso</strong>Tema fundacional: te quedas. Tema específico: avanzas y refuerzas</div>
+    <div class="change"><strong>+ Bitácora integrada</strong>Cada día: qué aprendí, qué se dificultó, resultado del ejercicio libre</div>
+  </div>
+</div>
+
+<script>
+const days = [
+  // Semana 1
+  { n:"Día 1", t:"Variables\ny print()", type:"learn", detail:"📦 Variables, tipos de datos, operaciones matemáticas. Ya lo hiciste hoy. Ejercicio sin guía: programa que calcule cuántos días faltan para tu cumpleaños." },
+  { n:"Día 2", t:"input() y\ndebugging", type:"learn", detail:"⌨️ input() para pedirle datos al usuario. Leer errores en rojo (TypeError, NameError, SyntaxError). Setup de GitHub. Ejercicio: calculadora interactiva que pide dos números al usuario." },
+  { n:"Día 3", t:"If / else\ncondicionales", type:"learn", detail:"🔀 if, elif, else. Operadores de comparación (>, <, ==, !=). Lógica booleana. Ejercicio: programa que clasifica una temperatura como fría, templada o caliente." },
+  { n:"Día 4", t:"Loops\nfor y while", type:"learn", detail:"🔄 for i in range(), while condición, break, continue. Ejercicio: tabla de multiplicar del número que el usuario elija." },
+  { n:"Día 5", t:"Listas y\ndiccionarios", type:"learn", detail:"📋 Listas: append, index, len. Diccionarios: keys, values. Ejercicio: mini directorio de contactos — guardar y buscar nombres." },
+  { n:"Día 6", t:"Funciones\ndef", type:"weekend", detail:"⚙️ def, parámetros, return. Dividir código en funciones reutilizables. Día de fin de semana — trabaja a tu ritmo en la mañana. Ejercicio: refactoriza la calculadora del Día 2 usando funciones." },
+  { n:"Día 7", t:"Miniproyecto\n#1 + repaso", type:"project", detail:"🚀 Proyecto integrador semana 1: programa de línea de comandos que pide nombre, edad y horas de estudio al día, y calcula estadísticas. Sube a GitHub con README. Bitácora: ¿qué fue lo más difícil de la semana?" },
+
+  // Semana 2
+  { n:"Día 8", t:"Archivos\ny errores", type:"learn", detail:"📁 Leer/escribir archivos .txt con open(). try/except para manejar errores. Ejercicio: guardar los resultados de tu calculadora en un archivo." },
+  { n:"Día 9", t:"NumPy\nbásico", type:"learn", detail:"🔢 pip install numpy. Arrays, operaciones vectoriales, reshape. Tu base de mecatrónica ayuda aquí — es álgebra lineal en código. Ejercicio: multiplicación de matrices 3x3." },
+  { n:"Día 10", t:"Imágenes\ncomo arrays", type:"learn", detail:"🖼 Una imagen = matriz de píxeles. Cargar imagen con NumPy, modificar valores, guardar. Entenderás cómo ve una cámara. Ejercicio: convierte una imagen a escala de grises manualmente." },
+  { n:"Día 11", t:"OpenCV\nintro", type:"learn", detail:"👁 pip install opencv-python. cv2.imread, cv2.imshow, cv2.Canny (detección de bordes), filtros. Ejercicio: aplica 3 filtros distintos a una foto y guarda los resultados." },
+  { n:"Día 12", t:"OpenCV\nvideo", type:"learn", detail:"🎥 cv2.VideoCapture — captura video de webcam en tiempo real. Aplica filtros en vivo. Ejercicio: muestra el video con un filtro de escala de grises en tiempo real." },
+  { n:"Día 13", t:"Detección\nde movimiento", type:"weekend", detail:"🏃 BackgroundSubtractor de OpenCV. Comparar frames para detectar cambios. Día de fin de semana. Ejercicio: detector que dibuja un rectángulo rojo sobre lo que se mueve." },
+  { n:"Día 14", t:"Miniproyecto\n#2 + repaso", type:"project", detail:"📸 Proyecto: detector de movimiento con alerta visual. Sube a GitHub. Este es el Nivel 1 del proyecto final. Bitácora: ¿qué parte de OpenCV se sintió más natural?" },
+
+  // Semana 3
+  { n:"Día 15", t:"Nivel 1→2\nDetec. objetos", type:"build", detail:"🔲 HOG + SVM: detector clásico de peatones de OpenCV. Bounding boxes sobre objetos detectados. Entender qué es confianza (confidence score)." },
+  { n:"Día 16", t:"YOLO\nmodelo pre-train", type:"build", detail:"🤖 pip install ultralytics. Correr YOLOv8 sobre imágenes y video. Filtrar solo la clase 'person'. Este es el Nivel 2." },
+  { n:"Día 17", t:"Nivel 3\nContar personas", type:"build", detail:"🔢 Línea virtual de conteo. Contar personas que cruzan de izquierda a derecha. Manejar el problema de doble conteo con IDs. Nivel 3 completado." },
+  { n:"Día 18", t:"Nivel 4\nPulir proyecto", type:"build", detail:"✨ Contador visible en pantalla, guardar log en .txt, manejo de errores, comentarios en el código. Nivel 4: versión mínima funcional lista." },
+  { n:"Día 19", t:"GitHub\n+ README", type:"build", detail:"📤 README.md profesional: qué hace el programa, cómo instalarlo, cómo usarlo, capturas de pantalla. Bitácora: entrada final del proyecto." },
+  { n:"Día 20", t:"Buffer /\nrepaso libre", type:"weekend", detail:"🎯 Día buffer. Si estás al corriente: prueba el proyecto con videos distintos (aeropuertos de YouTube). Si estás atrasado: completa lo pendiente. Prepara 3 preguntas para la reunión." },
+  { n:"Día 21", t:"Demo\nlista", type:"project", detail:"🤝 Día de mostrar tu trabajo. VS Code abierto, proyecto corriendo, GitHub con historial, bitácora escrita. Preguntas preparadas sobre su stack: ¿qué cámaras? ¿qué modelo usan? ¿Python o C++?" },
+];
+
+const colors = {
+  learn:   { bg:'#E6F1FB', fg:'#0C447C' },
+  project: { bg:'#EAF3DE', fg:'#27500A' },
+  build:   { bg:'#FAEEDA', fg:'#633806' },
+  weekend: { bg:'#D3D1C7', fg:'#444441' },
+};
+
+let sel = null;
+const containers = ['w1','w2','w3'];
+days.forEach((d, i) => {
+  const wi = Math.floor(i / 7);
+  const grid = document.getElementById(containers[wi]);
+  const c = colors[d.type];
+  const cell = document.createElement('div');
+  cell.className = 'dc';
+  cell.style.background = c.bg;
+  cell.style.color = c.fg;
+  cell.innerHTML = `<div class="dn">${d.n}</div>${d.t}`;
+  cell.onclick = () => {
+    if (sel) sel.classList.remove('sel');
+    cell.classList.add('sel');
+    sel = cell;
+    const box = document.getElementById('detail');
+    const icon = d.detail.split(' ')[0];
+    const rest = d.detail.substring(d.detail.indexOf(' ')+1);
+    box.innerHTML = `<span style="font-size:15px">${icon}</span><div><strong style="color:var(--color-text-primary);font-size:13px">${d.n}: ${d.t.replace(/\n/,' ')}</strong><br><span style="font-size:12px">${rest}</span></div>`;
+  };
+  grid.appendChild(cell);
+});
+</script>

@@ -1,0 +1,144 @@
+
+<style>
+  .week-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 1rem; }
+  .week-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .week-badge { font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 20px; }
+  .day-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 12px; }
+  .day-cell { border-radius: 8px; padding: 7px 4px; text-align: center; font-size: 11px; cursor: pointer; border: 0.5px solid transparent; transition: all 0.15s; }
+  .day-cell:hover { filter: brightness(0.93); }
+  .day-cell.active { border-color: var(--color-border-secondary); }
+  .day-name { font-weight: 500; margin-bottom: 2px; font-size: 10px; }
+  .day-topic { font-size: 10px; line-height: 1.3; }
+  .weekend { opacity: 0.6; }
+  .detail-box { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 14px; font-size: 13px; color: var(--color-text-secondary); min-height: 44px; display: flex; align-items: center; gap: 8px; }
+  .tip-row { display: flex; gap: 10px; margin-top: 12px; }
+  .tip { flex: 1; background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 8px 12px; font-size: 12px; color: var(--color-text-secondary); }
+  .tip strong { display: block; font-size: 11px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 2px; }
+  .progress-bar { height: 4px; border-radius: 2px; margin-top: 10px; }
+  .resource-pill { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; padding: 3px 9px; border-radius: 20px; border: 0.5px solid var(--color-border-secondary); margin: 3px 3px 0 0; cursor: pointer; background: var(--color-background-primary); color: var(--color-text-secondary); text-decoration: none; }
+  .resource-pill:hover { background: var(--color-background-secondary); }
+  h2.widget-title { font-size: 16px; font-weight: 500; margin: 0 0 4px; color: var(--color-text-primary); }
+  .subtitle { font-size: 13px; color: var(--color-text-secondary); margin: 0 0 16px; }
+</style>
+
+<h2 class="sr-only">Plan de aprendizaje Python en 3 semanas para visión computacional</h2>
+<h2 class="widget-title" style="margin-top:0.5rem">Tu ruta: de cero a visión computacional</h2>
+<p class="subtitle">Haz clic en cualquier día para ver qué harás ese día</p>
+
+<div id="detail-box" class="detail-box" style="margin-bottom:14px">
+  <span style="font-size:16px">👆</span>
+  <span>Selecciona un día para ver el detalle del tema</span>
+</div>
+
+<div class="week-card">
+  <div class="week-header">
+    <span class="week-badge" style="background:#E6F1FB;color:#0C447C">Semana 1</span>
+    <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Python desde cero</span>
+    <span style="margin-left:auto;font-size:12px;color:var(--color-text-secondary)">Meta: pensar en código</span>
+  </div>
+  <div class="day-grid" id="week1"></div>
+  <div class="tip-row">
+    <div class="tip"><strong>Herramientas</strong>VS Code + extensión Python + Python.org</div>
+    <div class="tip"><strong>Tiempo diario</strong>3–4 horas. Descansos de 25 min (técnica Pomodoro)</div>
+    <div class="tip"><strong>Tip clave</strong>Siempre escribe el código tú mismo, nunca copies y pegues</div>
+  </div>
+  <div class="progress-bar" style="background:linear-gradient(to right,#378ADD 0%,#378ADD 100%,var(--color-border-tertiary) 100%)"></div>
+</div>
+
+<div class="week-card">
+  <div class="week-header">
+    <span class="week-badge" style="background:#E1F5EE;color:#0F6E56">Semana 2</span>
+    <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Librerías esenciales</span>
+    <span style="margin-left:auto;font-size:12px;color:var(--color-text-secondary)">Meta: manipular datos e imágenes</span>
+  </div>
+  <div class="day-grid" id="week2"></div>
+  <div class="tip-row">
+    <div class="tip"><strong>NumPy</strong>Matrices y álgebra — tu mecatrónica ayuda aquí</div>
+    <div class="tip"><strong>OpenCV</strong>La librería #1 de visión computacional, en Python</div>
+    <div class="tip"><strong>Tip clave</strong>Instala todo con pip desde la terminal de VS Code</div>
+  </div>
+  <div class="progress-bar" style="background:linear-gradient(to right,#1D9E75 0%,#1D9E75 100%,var(--color-border-tertiary) 100%)"></div>
+</div>
+
+<div class="week-card">
+  <div class="week-header">
+    <span class="week-badge" style="background:#FAEEDA;color:#854F0B">Semana 3</span>
+    <span style="font-size:14px;font-weight:500;color:var(--color-text-primary)">Proyecto real: contar personas</span>
+    <span style="margin-left:auto;font-size:12px;color:var(--color-text-secondary)">Meta: tener algo que mostrar</span>
+  </div>
+  <div class="day-grid" id="week3"></div>
+  <div class="tip-row">
+    <div class="tip"><strong>YOLO / HOG</strong>Detectores de personas ya entrenados</div>
+    <div class="tip"><strong>Tu proyecto</strong>Contar personas en un video de YouTube bajado</div>
+    <div class="tip"><strong>Tip clave</strong>Sube tu código a GitHub antes de reunirte con él</div>
+  </div>
+  <div class="progress-bar" style="background:linear-gradient(to right,#BA7517 0%,#BA7517 100%,var(--color-border-tertiary) 100%)"></div>
+</div>
+
+<div style="margin-top:6px">
+  <p style="font-size:12px;font-weight:500;color:var(--color-text-secondary);margin:0 0 6px">Recursos gratuitos recomendados</p>
+  <a class="resource-pill" href="https://www.youtube.com/watch?v=rfscVS0vtbw" target="_blank">▶ Python en 4 horas (freeCodeCamp)</a>
+  <a class="resource-pill" href="https://cs50.harvard.edu/python/2022/" target="_blank">▶ CS50 Python (Harvard gratis)</a>
+  <a class="resource-pill" href="https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html" target="_blank">▶ Tutoriales OpenCV oficiales</a>
+  <a class="resource-pill" href="https://www.youtube.com/watch?v=WgPbbWmnXJ8" target="_blank">▶ Detección de personas con OpenCV</a>
+</div>
+
+<script>
+const weeks = [
+  [
+    { name: "Día 1", topic: "Setup\nVS Code + Python", detail: "🛠 Instala Python desde python.org. Abre VS Code, instala la extensión 'Python'. Escribe tu primer programa: print('Hola mundo'). Aprende qué es una variable, un string, un número.", weekend: false },
+    { name: "Día 2", topic: "Variables\ny tipos", detail: "📦 Variables (x = 5), tipos de datos (int, float, str, bool), operaciones matemáticas básicas. Haz un programa que calcule el área de un cuarto.", weekend: false },
+    { name: "Día 3", topic: "Condicionales\nif / else", detail: "🔀 if, elif, else. Lógica booleana (and, or, not). Haz un programa que diga si un número es par o impar, positivo o negativo.", weekend: false },
+    { name: "Día 4", topic: "Loops\nfor y while", detail: "🔄 for i in range(10), while condición. Recorre una lista, suma números del 1 al 100. Tablas de multiplicar con loops.", weekend: false },
+    { name: "Día 5", topic: "Listas y\ndiccionarios", detail: "📋 Listas: [1,2,3], append, index. Diccionarios: {'nombre': 'Juan'}. Haz una 'base de datos' de personas con nombre y edad.", weekend: false },
+    { name: "Día 6", topic: "Funciones", detail: "⚙️ def mi_funcion(parametro): ... return. Divide y vencerás — divide tu código en funciones. Haz una calculadora con funciones separadas para suma, resta, etc.", weekend: true },
+    { name: "Día 7", topic: "Miniproyecto\n#1", detail: "🚀 Proyecto integrador: Calculadora de IMC, o conversor de temperaturas, o un juego de 'adivina el número'. Usa todo lo aprendido: variables, loops, funciones, if/else.", weekend: true },
+  ],
+  [
+    { name: "Día 8", topic: "Archivos\ny errores", detail: "📁 Leer y escribir archivos .txt con open(). Manejo de errores con try/except. Haz un programa que guarde y lea una lista de nombres.", weekend: false },
+    { name: "Día 9", topic: "NumPy\nbásico", detail: "🔢 pip install numpy. Arrays, operaciones vectoriales. Como las matrices de tu mecatrónica. Suma de vectores, matrices, reshape.", weekend: false },
+    { name: "Día 10", topic: "NumPy\n+ imágenes", detail: "🖼 Una imagen es una matriz de píxeles. Carga una imagen como array de NumPy, modifica los valores, guárdala. Entenderás cómo piensa una cámara.", weekend: false },
+    { name: "Día 11", topic: "OpenCV\nintro", detail: "👁 pip install opencv-python. Carga una imagen, muéstrala, aplica filtros (blur, escala de grises, bordes). cv2.imread, cv2.imshow, cv2.Canny.", weekend: false },
+    { name: "Día 12", topic: "OpenCV\nvideo", detail: "🎥 Captura video de una webcam en tiempo real. cv2.VideoCapture. Muestra el video en una ventana. Aplica filtros en tiempo real.", weekend: false },
+    { name: "Día 13", topic: "Detección\nde movimiento", detail: "🏃 Compara frames consecutivos para detectar movimiento. Fondo fijo vs fondo dinámico. BackgroundSubtractor de OpenCV.", weekend: true },
+    { name: "Día 14", topic: "Miniproyecto\n#2", detail: "📸 Proyecto: Detector de movimiento que avisa cuando algo se mueve frente a la cámara. Usa OpenCV + loops + funciones de la semana 1.", weekend: true },
+  ],
+  [
+    { name: "Día 15", topic: "Detección\nde personas", detail: "🚶 HOG + SVM: el detector clásico de peatones de OpenCV (cv2.HOGDescriptor). Corre el detector en imágenes y videos de prueba. Entiende qué es un bounding box.", weekend: false },
+    { name: "Día 16", topic: "YOLO\nbásico", detail: "🤖 YOLO (You Only Look Once) es el detector de objetos más usado en la industria. Descarga un modelo preentrenado con pip install ultralytics. Corre detección en imágenes.", weekend: false },
+    { name: "Día 17", topic: "Contar\npersonas", detail: "🔢 Combina YOLO + un contador: cada vez que detecta una persona, suma 1. Maneja el problema de contar la misma persona dos veces con una línea virtual de conteo.", weekend: false },
+    { name: "Día 18", topic: "Pulir\nproyecto", detail: "✨ Agrega: contador visible en pantalla, guardar resultados en un .txt, manejo de errores, comentarios en el código explicando qué hace cada parte.", weekend: false },
+    { name: "Día 19", topic: "GitHub\n+ demo", detail: "📤 Crea una cuenta en GitHub. Sube tu proyecto. Haz un README.md explicando qué hace tu programa. Esto es tu portafolio.", weekend: false },
+    { name: "Día 20", topic: "Práctica\nlibre", detail: "🎯 Repasa lo que menos entiendas. Prueba tu proyecto con videos distintos (descarga videos de aeropuertos de YouTube). Prepara 3 preguntas inteligentes para el amigo de tu papá.", weekend: true },
+    { name: "Día 21", topic: "Reunión\npreparada", detail: "🤝 Día de mostrar tu trabajo. Muestra el proyecto funcionando. Ten VS Code abierto con tu código. Haz preguntas sobre su stack actual: ¿qué cámaras usan? ¿qué modelo de detección?", weekend: true },
+  ]
+];
+
+const colors = [
+  { bg: '#E6F1FB', text: '#0C447C', wkbg: '#dce9f5', wktext: '#185FA5' },
+  { bg: '#E1F5EE', text: '#0F6E56', wkbg: '#d3ede4', wktext: '#1D9E75' },
+  { bg: '#FAEEDA', text: '#854F0B', wkbg: '#f0e0c0', wktext: '#BA7517' },
+];
+
+let selected = null;
+
+weeks.forEach((days, wi) => {
+  const grid = document.getElementById('week' + (wi+1));
+  days.forEach((d, di) => {
+    const cell = document.createElement('div');
+    cell.className = 'day-cell' + (d.weekend ? ' weekend' : '');
+    const c = colors[wi];
+    cell.style.background = d.weekend ? c.wkbg : c.bg;
+    cell.style.color = d.weekend ? c.wktext : c.text;
+    cell.innerHTML = `<div class="day-name">${d.name}</div><div class="day-topic">${d.topic}</div>`;
+    cell.onclick = () => {
+      if (selected) selected.classList.remove('active');
+      cell.classList.add('active');
+      selected = cell;
+      const box = document.getElementById('detail-box');
+      box.innerHTML = `<span style="font-size:14px">${d.detail.split(' ')[0]}</span><span><strong style="color:var(--color-text-primary)">${d.name}: ${d.topic.replace(/\n/,' ')}</strong><br>${d.detail.substring(d.detail.indexOf(' ')+1)}</span>`;
+    };
+    grid.appendChild(cell);
+  });
+});
+</script>
