@@ -1,3 +1,9 @@
+nombre = "Uxis"
+edad = 18
+print("Hola, me llamo", nombre)
+print("Tengo", edad, "edad")
+print("En 10 años tendré", edad + 10, "años")
+
 
 #Calculadora de hrs de estudio
 
